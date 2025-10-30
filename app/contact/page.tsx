@@ -21,8 +21,8 @@ export default function Contact() {
     {
       name: "Twitter/X",
       icon: "🐦",
-      url: "https://twitter.com/robsonalves",
-      username: "@robsonalves",
+      url: "https://twitter.com/robdevops",
+      username: "@robdevops",
     },
   ];
 

@@ -1,0 +1,55 @@
+name: Auto-Publish Blog Post
+
+on:
+  schedule:
+    # Every Monday at 09:00 UTC (06:00 BRT)
+    - cron: '0 9 * * 1'
+
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-blog-post.js
+
+      - name: Commit and push new post
+        run: |
+          git config --local user.name "Robson Alves"
+          git config --local user.email "hi@robsonalves.online"
+          git add content/blog/
+
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No new post generated"
+            exit 0
+          fi
+
+          POST_TITLE=$(git diff --staged --name-only | grep '.md$' | head -1 | xargs basename | sed 's/\.md$//' | sed 's/^[0-9-]*-//' | tr '-' ' ')
+          git commit -m "Add new blog post: ${POST_TITLE}"
+          git push
+
+      - name: Trigger Vercel deployment
+        run: |
+          echo "Vercel will auto-deploy on push"
