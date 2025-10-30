@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { remark } from 'remark';
@@ -10,7 +11,6 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
 import 'highlight.js/styles/github-dark.css';
 
-// Revalidate every hour to check for newly published posts
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
@@ -67,7 +67,7 @@ export default async function BlogPost({
           {post.author && <span>✍️ {post.author}</span>}
         </div>
 
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2 flex-wrap mb-8">
           {post.tags.map((tag) => (
             <span
               key={tag}
@@ -77,6 +77,19 @@ export default async function BlogPost({
             </span>
           ))}
         </div>
+
+        {/* Cover Image */}
+        {post.image && (
+          <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl mb-8">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
       </header>
 
       {/* Content */}

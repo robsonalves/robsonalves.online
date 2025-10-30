@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/blog";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { useTranslations } from "@/lib/i18n/use-translations";
 
-// Revalidate every hour to check for newly published posts
 export const revalidate = 3600;
 
 export default async function Blog() {
@@ -27,32 +27,47 @@ export default async function Blog() {
         {posts.map((post) => (
           <article
             key={post.slug}
-            className="group p-8 border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl transition-all"
+            className="group border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl transition-all overflow-hidden"
           >
             <Link href={`/blog/${post.slug}`}>
-              <div className="space-y-3">
-                <div className="flex justify-between items-start gap-4">
-                  <h2 className="text-2xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {post.title}
-                  </h2>
-                </div>
-                <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-                  <span>📅 {post.date}</span>
-                  <span>⏱️ {post.readTime} {t.blog.readTime}</span>
-                  {post.author && <span>✍️ {post.author}</span>}
-                </div>
-                <p className="text-lg text-gray-700 dark:text-gray-300">
-                  {post.description}
-                </p>
-                <div className="flex gap-2 flex-wrap">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-1.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
+              <div className="flex flex-col md:flex-row">
+                {/* Image */}
+                {post.image && (
+                  <div className="relative w-full md:w-80 h-48 md:h-auto flex-shrink-0">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+
+                {/* Content */}
+                <div className="p-8 flex-1 space-y-3">
+                  <div className="flex justify-between items-start gap-4">
+                    <h2 className="text-2xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      {post.title}
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+                    <span>📅 {post.date}</span>
+                    <span>⏱️ {post.readTime} {t.blog.readTime}</span>
+                    {post.author && <span>✍️ {post.author}</span>}
+                  </div>
+                  <p className="text-lg text-gray-700 dark:text-gray-300">
+                    {post.description}
+                  </p>
+                  <div className="flex gap-2 flex-wrap">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-4 py-1.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Link>

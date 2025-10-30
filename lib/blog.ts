@@ -14,7 +14,7 @@ export interface BlogPost {
   author?: string;
   content: string;
   language: 'en' | 'pt';
-  publishDate?: string; // Optional scheduled publish date (ISO string)
+  image?: string; // Cover image URL
 }
 
 export function getAllPosts(language?: 'en' | 'pt'): BlogPost[] {
@@ -53,18 +53,8 @@ export function getAllPosts(language?: 'en' | 'pt'): BlogPost[] {
           author: data.author || 'Robson Alves',
           content,
           language: lang as 'en' | 'pt',
-          publishDate: data.publishDate,
+          image: data.image,
         };
-      })
-      .filter((post) => {
-        // If no publishDate is set, show the post immediately
-        if (!post.publishDate) {
-          return true;
-        }
-        // Only show posts where publishDate is in the past or today
-        const publishDate = new Date(post.publishDate);
-        const now = new Date();
-        return publishDate <= now;
       });
 
     allPostsData.push(...postsData);
@@ -100,19 +90,8 @@ export function getPostBySlug(slug: string, language: 'en' | 'pt' = 'en'): BlogP
       author: data.author || 'Robson Alves',
       content,
       language: language,
-      publishDate: data.publishDate,
+      image: data.image,
     };
-
-    // Check if post should be published
-    if (post.publishDate) {
-      const publishDate = new Date(post.publishDate);
-      const now = new Date();
-
-      // If publish date is in the future, don't show the post
-      if (publishDate > now) {
-        return null;
-      }
-    }
 
     return post;
   } catch (error) {
