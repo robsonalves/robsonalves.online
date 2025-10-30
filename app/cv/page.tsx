@@ -212,6 +212,13 @@ export default function CV() {
         <h2 className="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
           Education
         </h2>
+
+        <div className="mb-6 pl-4 border-l-4 border-purple-500">
+          <h3 className="text-xl font-semibold">MBA in Software Engineering AI</h3>
+          <p className="text-gray-600 dark:text-gray-400">Full Cycle</p>
+          <p className="text-gray-500">December 2025 - December 2026</p>
+        </div>
+
         <div className="pl-4 border-l-4 border-blue-500">
           <h3 className="text-xl font-semibold">Bachelor in Computer Science</h3>
           <p className="text-gray-600 dark:text-gray-400">Faculdade Uniesp</p>
