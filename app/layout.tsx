@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { useTranslations } from "@/lib/i18n/use-translations";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Robson Alves - DevOps Engineer | SRE | Cloud Architect",
@@ -26,6 +27,7 @@ export default async function RootLayout({
           {children}
         </main>
         <Footer locale={locale} />
+        <Analytics />
       </body>
     </html>
   );
