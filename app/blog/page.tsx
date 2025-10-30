@@ -3,6 +3,9 @@ import { getAllPosts } from "@/lib/blog";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { useTranslations } from "@/lib/i18n/use-translations";
 
+// Revalidate every hour to check for newly published posts
+export const revalidate = 3600;
+
 export default async function Blog() {
   const locale = await getLocale();
   const t = useTranslations(locale);

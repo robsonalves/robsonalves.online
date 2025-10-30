@@ -3,6 +3,7 @@ title: "How I set up my website with Next.js"
 date: "2025-10-30"
 description: "Learn how to create a personal website using Next.js, TypeScript and Tailwind CSS."
 tags: ["nextjs", "typescript", "tailwind"]
+publishDate: "2025-10-30T00:00:00.000Z"
 ---
 
 # How I set up my website with Next.js

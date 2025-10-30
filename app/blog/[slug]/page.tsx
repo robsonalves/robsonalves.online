@@ -10,6 +10,9 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
 import 'highlight.js/styles/github-dark.css';
 
+// Revalidate every hour to check for newly published posts
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({

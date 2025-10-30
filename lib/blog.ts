@@ -14,6 +14,7 @@ export interface BlogPost {
   author?: string;
   content: string;
   language: 'en' | 'pt';
+  publishDate?: string; // Optional scheduled publish date (ISO string)
 }
 
 export function getAllPosts(language?: 'en' | 'pt'): BlogPost[] {
@@ -52,7 +53,18 @@ export function getAllPosts(language?: 'en' | 'pt'): BlogPost[] {
           author: data.author || 'Robson Alves',
           content,
           language: lang as 'en' | 'pt',
+          publishDate: data.publishDate,
         };
+      })
+      .filter((post) => {
+        // If no publishDate is set, show the post immediately
+        if (!post.publishDate) {
+          return true;
+        }
+        // Only show posts where publishDate is in the past or today
+        const publishDate = new Date(post.publishDate);
+        const now = new Date();
+        return publishDate <= now;
       });
 
     allPostsData.push(...postsData);
@@ -78,7 +90,7 @@ export function getPostBySlug(slug: string, language: 'en' | 'pt' = 'en'): BlogP
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
-    return {
+    const post: BlogPost = {
       slug,
       title: data.title || slug,
       date: data.date || new Date().toISOString().split('T')[0],
@@ -88,7 +100,21 @@ export function getPostBySlug(slug: string, language: 'en' | 'pt' = 'en'): BlogP
       author: data.author || 'Robson Alves',
       content,
       language: language,
+      publishDate: data.publishDate,
     };
+
+    // Check if post should be published
+    if (post.publishDate) {
+      const publishDate = new Date(post.publishDate);
+      const now = new Date();
+
+      // If publish date is in the future, don't show the post
+      if (publishDate > now) {
+        return null;
+      }
+    }
+
+    return post;
   } catch (error) {
     return null;
   }
