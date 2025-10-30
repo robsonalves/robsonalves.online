@@ -1,8 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getLocale } from "@/lib/i18n/get-locale";
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
 import 'highlight.js/styles/github-dark.css';
@@ -16,8 +19,10 @@ export async function generateStaticParams() {
 
 async function markdownToHtml(markdown: string) {
   const result = await remark()
-    .use(remarkRehype)
-    .use(rehypeHighlight)
+    .use(remarkGfm) // GitHub Flavored Markdown support
+    .use(remarkRehype, { allowDangerousHtml: true }) // Allow HTML in markdown
+    .use(rehypeRaw) // Parse raw HTML
+    .use(rehypeHighlight) // Code syntax highlighting
     .use(rehypeStringify)
     .process(markdown);
   return result.toString();
@@ -29,7 +34,9 @@ export default async function BlogPost({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const locale = await getLocale();
+  // Only get post in the current language
+  const post = getPostBySlug(slug, locale);
 
   if (!post) {
     notFound();
@@ -72,26 +79,33 @@ export default async function BlogPost({
       {/* Content */}
       <div
         className="prose prose-lg dark:prose-invert max-w-none
-          prose-headings:font-bold
-          prose-h1:text-4xl prose-h1:mb-8
-          prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6
-          prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-4
-          prose-p:text-gray-700 dark:prose-p:text-gray-300
-          prose-p:leading-loose prose-p:mb-8 prose-p:text-lg
-          prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-gray-900 dark:prose-strong:text-gray-100
+          prose-headings:font-extrabold
+          prose-h1:text-4xl prose-h1:mb-8 prose-h1:mt-12 prose-h1:font-extrabold prose-h1:text-gray-900 dark:prose-h1:text-white
+          prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:font-extrabold prose-h2:text-gray-900 dark:prose-h2:text-white
+          prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-4 prose-h3:font-bold prose-h3:text-gray-900 dark:prose-h3:text-white
+          prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-3 prose-h4:font-bold prose-h4:text-gray-900 dark:prose-h4:text-white
+          prose-p:text-gray-800 dark:prose-p:text-gray-200
+          prose-p:leading-loose prose-p:mb-6 prose-p:text-lg
+          prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-gray-900 dark:prose-strong:text-white prose-strong:font-bold
           prose-code:text-pink-600 dark:prose-code:text-pink-400
           prose-code:bg-gray-100 dark:prose-code:bg-gray-800
           prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
-          prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950
+          prose-code:before:content-[''] prose-code:after:content-['']
+          prose-pre:bg-[#1e1e1e] dark:prose-pre:bg-[#0d1117]
           prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-xl
-          prose-pre:overflow-x-auto prose-pre:my-8
-          prose-ul:my-8 prose-ul:list-disc prose-ul:space-y-2
-          prose-ol:my-8 prose-ol:list-decimal prose-ol:space-y-2
-          prose-li:my-3 prose-li:leading-relaxed
-          prose-blockquote:border-l-4 prose-blockquote:border-blue-500
+          prose-pre:overflow-x-auto prose-pre:my-8 prose-pre:shadow-xl
+          prose-pre:border prose-pre:border-gray-700 dark:prose-pre:border-gray-800
+          [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-sm [&_pre_code]:leading-relaxed
+          [&_pre_code]:text-gray-100 dark:[&_pre_code]:text-gray-100
+          prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+          prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
+          prose-li:my-5 prose-li:leading-relaxed prose-li:text-gray-800 dark:prose-li:text-gray-200
+          prose-blockquote:border-l-4 prose-blockquote:border-yellow-500
           prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:my-8
-          prose-blockquote:py-4 prose-blockquote:bg-blue-50 dark:prose-blockquote:bg-blue-900/20
+          prose-blockquote:py-4 prose-blockquote:bg-yellow-50 dark:prose-blockquote:bg-yellow-900/10
+          prose-blockquote:rounded-r-lg prose-blockquote:text-gray-800 dark:prose-blockquote:text-gray-200
+          prose-hr:my-12 prose-hr:border-gray-300 dark:prose-hr:border-gray-700 prose-hr:border-t-2
           prose-img:rounded-lg prose-img:shadow-lg prose-img:my-8"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />

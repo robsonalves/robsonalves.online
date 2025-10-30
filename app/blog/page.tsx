@@ -6,7 +6,8 @@ import { useTranslations } from "@/lib/i18n/use-translations";
 export default async function Blog() {
   const locale = await getLocale();
   const t = useTranslations(locale);
-  const posts = getAllPosts();
+  // Only show posts in the current language
+  const posts = getAllPosts(locale);
 
   return (
     <div className="max-w-4xl mx-auto">
