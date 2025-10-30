@@ -1,0 +1,44 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Vercel (Production)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          echo "Deploy automático via Vercel"
+          echo "Configure o Vercel para fazer deploy automático da branch main"
+
+      - name: Deploy Preview (Pull Request)
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "Preview deploy para PR #${{ github.event.pull_request.number }}"
+          echo "Vercel cria previews automaticamente para PRs"
