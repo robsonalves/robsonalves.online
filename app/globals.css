@@ -77,6 +77,12 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Group summary/intro paragraphs with lists that follow */
+.prose p:has(+ ul),
+.prose p:has(+ ol) {
+  margin-bottom: 0.5rem;
+}
+
 /* Heading spacing and weight */
 .prose h1 {
   font-weight: 800;
