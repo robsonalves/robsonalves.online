@@ -5,6 +5,7 @@ export const translations = {
       cv: "CV",
       blog: "Blog",
       contact: "Contact",
+      schedule: "Schedule",
     },
     home: {
       title: "Robson Alves",
@@ -74,6 +75,7 @@ export const translations = {
       cv: "Currículo",
       blog: "Blog",
       contact: "Contato",
+      schedule: "Agendar",
     },
     home: {
       title: "Robson Alves",

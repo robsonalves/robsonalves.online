@@ -21,7 +21,7 @@ export default async function Home() {
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
           {t.home.description}
         </p>
-        <div className="flex gap-4 justify-center pt-4">
+        <div className="flex flex-wrap gap-4 justify-center pt-4">
           <a
             href="https://github.com/robsonalves"
             target="_blank"
@@ -38,6 +38,12 @@ export default async function Home() {
           >
             {t.home.linkedin}
           </a>
+          <Link
+            href="/schedule"
+            className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-xl flex items-center gap-2"
+          >
+            📅 {locale === 'pt' ? 'Agende uma Conversa' : 'Schedule a Call'}
+          </Link>
         </div>
       </section>
 

@@ -11,6 +11,7 @@ interface HeaderProps {
     cv: string;
     blog: string;
     contact: string;
+    schedule: string;
   };
 }
 
@@ -22,6 +23,7 @@ export default function Header({ locale, translations }: HeaderProps) {
     { href: "/cv", label: translations.cv },
     { href: "/blog", label: translations.blog },
     { href: "/contact", label: translations.contact },
+    { href: "/schedule", label: translations.schedule },
   ];
 
   return (
