@@ -5,7 +5,7 @@ description: "Em hoje cenário dinâmico de nuvem nativa, garantir a saúde e o 
 tags: ["kubernetes","devops","cloud"]
 readTime: "6 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1508974690384-cb884c98d175?w=1200&q=80"
+image: "https://images.unsplash.com/photo-1722949572042-7f061ec53f2d?ixid=M3w4MjQ1OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjIwMDk2Nzh8&ixlib=rb-4.1.0&w=1200&q=80&fit=crop"
 ---
 # Monitoramento do Kubernetes com Prometheus e Grafana
 
