@@ -5,6 +5,7 @@ description: "Em hoje's paisagem digital, um único ponto de falha pode derrubar
 tags: ["aws","devops","cloud"]
 readTime: "7 min"
 author: "Robson Alves"
+image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
 ---
 # Construindo Arquiteturas Multirregiões resilientes
 
