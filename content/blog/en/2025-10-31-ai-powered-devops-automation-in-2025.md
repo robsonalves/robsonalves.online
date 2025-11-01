@@ -5,7 +5,7 @@ description: "Imagine a scenario where your entire infrastructure scales automat
 tags: ["ai & automation","devops","cloud"]
 readTime: "6 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1758626042818-b05e9c91b84a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ1OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjIwMTAwNzR8&ixlib=rb-4.1.0&q=80&w=1080"
+image: "https://images.unsplash.com/photo-1758626042818-b05e9c91b84a?w=1200&q=80"
 ---
 # AI-Powered DevOps Automation in 2025
 

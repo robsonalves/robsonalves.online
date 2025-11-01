@@ -5,7 +5,7 @@ description: "Imagine a scenario where your team spends hours debugging issues t
 tags: ["kubernetes","devops","cloud"]
 readTime: "5 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1688546835734-37ea909c2bb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ1OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjIwMTAwNjZ8&ixlib=rb-4.1.0&q=80&w=1080"
+image: "https://images.unsplash.com/photo-1688546835734-37ea909c2bb1?w=1200&q=80"
 ---
 
 # GitOps with Flux CD: Complete Implementation Guide

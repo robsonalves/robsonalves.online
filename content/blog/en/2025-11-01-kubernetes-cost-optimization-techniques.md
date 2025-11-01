@@ -5,7 +5,7 @@ description: "Scaling applications efficiently while managing costs is a critica
 tags: ["kubernetes","devops","cloud"]
 readTime: "5 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1532196164534-ae5912fea015?ixid=M3w4MjQ1OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjIwMDk3MTF8&ixlib=rb-4.1.0&w=1200&q=80&fit=crop"
+image: "https://images.unsplash.com/photo-1532196164534-ae5912fea015?w=1200&q=80"
 ---
 # Kubernetes Cost Optimization Techniques
 

@@ -5,7 +5,7 @@ description: "In today’s fast-paced infrastructure-as-code (IaC) landscape, ma
 tags: ["terraform","devops","cloud"]
 readTime: "7 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1667567692418-4457c39d5846?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ1OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjIwMTAwNzB8&ixlib=rb-4.1.0&q=80&w=1080"
+image: "https://images.unsplash.com/photo-1667567692418-4457c39d5846?w=1200&q=80"
 ---
 # Terraform Modules: Design Patterns and Best Practices
 
