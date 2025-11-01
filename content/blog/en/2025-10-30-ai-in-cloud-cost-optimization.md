@@ -5,7 +5,7 @@ description: "In today’s fast-paced digital landscape, cloud costs can easily 
 tags: ["ai & automation","devops","cloud"]
 readTime: "6 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1718011087751-e82f1792aa32?w=1200image: "https://images.unsplash.com/photo-DzS8AOaLIZU?w=1200&q=80"q=80"
+image: "https://images.unsplash.com/photo-1718011087751-e82f1792aa32?w=1200&q=80"
 ---
 # AI in Cloud Cost Optimization
 
