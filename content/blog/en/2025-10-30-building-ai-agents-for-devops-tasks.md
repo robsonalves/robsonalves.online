@@ -5,6 +5,7 @@ description: "In today's fast-paced development environments, the manual managem
 tags: ["ai & automation","devops","cloud"]
 readTime: "5 min"
 author: "Robson Alves"
+image: "https://images.unsplash.com/photo-1645839072940-bb2a4f189ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MjQ1OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjIwMTAwNzV8&ixlib=rb-4.1.0&q=80&w=1080"
 ---
 
 # Building AI Agents for DevOps Tasks
