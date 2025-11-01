@@ -5,7 +5,7 @@ description: "Imagine deploying a complex cloud infrastructure with hundreds of 
 tags: ["terraform","devops","cloud"]
 readTime: "8 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-DVGmP1AMYa4?w=1200&q=80"
+image: "https://images.unsplash.com/photo-1628451693642-81712db8ea4d?w=1200&q=80"
 ---
 # Terraform vs Pulumi: A Technical Comparison
 
