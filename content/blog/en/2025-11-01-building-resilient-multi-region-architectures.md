@@ -5,6 +5,7 @@ description: "In today's digital landscape, a single point of failure can bring 
 tags: ["aws","devops","cloud"]
 readTime: "7 min"
 author: "Robson Alves"
+image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
 ---
 # Building Resilient Multi-Region Architectures
 
