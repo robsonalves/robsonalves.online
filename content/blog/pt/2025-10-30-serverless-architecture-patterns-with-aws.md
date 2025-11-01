@@ -5,7 +5,7 @@ description: "Imagine que você foi encarregado de construir uma aplicação esc
 tags: ["aws","devops","cloud"]
 readTime: "5 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1730148005783-6b99a66bacd6?w=1200&q=80"q=80"
+image: "https://images.unsplash.com/photo-1730148005783-6b99a66bacd6?w=1200&q=80"
 ---
 
 # Padrões de Arquitetura Serverless com AWS
