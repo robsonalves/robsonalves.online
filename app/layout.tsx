@@ -10,6 +10,11 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   title: "Robson Alves - DevOps Engineer | SRE | Cloud Architect",
   description: "Personal website and blog of Robson Alves - DevOps Engineer specializing in cloud infrastructure and automation",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default async function RootLayout({
