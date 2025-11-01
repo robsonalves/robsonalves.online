@@ -5,7 +5,7 @@ description: "Imagine you're tasked with building a scalable application that ca
 tags: ["aws","devops","cloud"]
 readTime: "5 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1682559736721-c2e77ff4c650?w=1200&q=80"
+image: "https://images.unsplash.com/photo-4ye1162Z6zM?w=1200&q=80"
 ---
 
 # Serverless Architecture Patterns with AWS

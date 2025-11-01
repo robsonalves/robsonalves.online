@@ -5,7 +5,7 @@ description: "In today's fast-paced digital landscape, cloud computing has becom
 tags: ["ai & automation","devops","cloud"]
 readTime: "5 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1758626104169-6835c0bd03e3?w=1200&q=80"
+image: "https://images.unsplash.com/photo-fBzhjDh0Kzo?w=1200&q=80"
 ---
 # AI in Cloud Cost Optimization
 

@@ -5,7 +5,7 @@ description: "In recent years, high-profile data breaches have underscored the c
 tags: ["aws","devops","cloud"]
 readTime: "6 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1682559736721-c2e77ff4c650?w=1200&q=80"
+image: "https://images.unsplash.com/photo-pvLTN-ybcIo?w=1200&q=80"
 ---
 
 # AWS Security Best Practices

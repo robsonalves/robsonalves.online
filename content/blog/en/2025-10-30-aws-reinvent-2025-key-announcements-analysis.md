@@ -5,7 +5,7 @@ description: "Imagine you're a DevOps engineer tasked with staying ahead of the 
 tags: ["aws","devops","cloud"]
 readTime: "5 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1682559736721-c2e77ff4c650?w=1200&q=80"
+image: "https://images.unsplash.com/photo-iM8dxccK1sY?w=1200&q=80"
 ---
 # AWS re:Invent 2025 Key Announcements Analysis
 

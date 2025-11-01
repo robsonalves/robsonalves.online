@@ -5,7 +5,7 @@ description: "Imagine deploying a predictive maintenance model that fails in pro
 tags: ["ai & automation","devops","cloud"]
 readTime: "7 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1758626104169-6835c0bd03e3?w=1200&q=80"
+image: "https://images.unsplash.com/photo-Y6oZtRRE-84?w=1200&q=80"
 ---
 
 # Machine Learning Operations (MLOps) Best Practices
