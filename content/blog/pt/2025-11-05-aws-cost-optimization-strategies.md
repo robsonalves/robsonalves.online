@@ -5,7 +5,7 @@ description: "Imagina lançar um novo serviço apenas para descobrir que sua fat
 tags: ["aws","devops","cloud"]
 readTime: "6 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-DI0lcyNziMA?w=1200&q=80"
+image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80"
 ---
 # Estratégias de Otimização de Custos da AWS
 

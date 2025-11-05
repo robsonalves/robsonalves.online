@@ -5,7 +5,7 @@ description: "Managing infrastructure manually can be error-prone and time-consu
 tags: ["devops","devops","cloud"]
 readTime: "5 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-p-l8OjDH9eE?w=1200&q=80"
+image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&q=80"
 ---
 # Infrastructure as Code: Terraform vs CloudFormation
 

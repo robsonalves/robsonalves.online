@@ -5,7 +5,7 @@ description: "Imagine launching a new service only to find your monthly AWS bill
 tags: ["aws","devops","cloud"]
 readTime: "6 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-1591912046924-b10112411591?ixid=M3w4MjQ1OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjIzMDcxNTJ8&ixlib=rb-4.1.0&w=1200&q=80&fit=crop"
+image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80"
 ---
 # AWS Cost Optimization Strategies
 

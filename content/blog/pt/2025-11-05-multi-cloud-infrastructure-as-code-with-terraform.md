@@ -5,7 +5,7 @@ description: "Imagime um cenário em que sua organização decide diversificar s
 tags: ["terraform","devops","cloud"]
 readTime: "6 min"
 author: "Robson Alves"
-image: "https://images.unsplash.com/photo-NySscRv8F9g?w=1200&q=80"
+image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80"
 ---
 # Infraestrutura Multicloud como Código com Terraform
 
