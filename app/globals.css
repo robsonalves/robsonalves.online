@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Custom styles for blog post content */
+.prose hr {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-color: #d1d5db;
+  border-top-width: 2px;
+}
+
+.dark .prose hr {
+  border-color: #374151;
+}
+
+/* Ensure code blocks within pre tags have proper styling */
+.prose pre code {
+  background-color: transparent !important;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #e5e7eb !important;
+}
+
+/* Remove default code styling when inside pre */
+.prose pre code::before,
+.prose pre code::after {
+  content: none;
+}
+
+/* Better pre background */
+.prose pre {
+  background-color: #1e1e1e !important;
+}
+
+.dark .prose pre {
+  background-color: #0d1117 !important;
+}
+
+/* Improve list spacing */
+.prose ul > li,
+.prose ol > li {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Nested list items (sub-bullets) should have less spacing */
+.prose ul li ul li,
+.prose ol li ol li,
+.prose ul li ol li,
+.prose ol li ul li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Better paragraph spacing */
+.prose p {
+  margin-bottom: 1.5rem;
+}
+
+/* Group summary/intro paragraphs with lists that follow */
+.prose p:has(+ ul),
+.prose p:has(+ ol) {
+  margin-bottom: 0.5rem;
+}
+
+/* Heading spacing and weight */
+.prose h1 {
+  font-weight: 800;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.prose h2 {
+  font-weight: 800;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose h3 {
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.prose h4 {
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Blockquote improvements */
+.prose blockquote {
+  font-style: italic;
+  border-left-width: 4px;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose blockquote strong {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Strong/Bold text improvements */
+.prose strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+.dark .prose strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+/* Code block improvements */
+.prose pre {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+}
+
+/* Inline code improvements */
+.prose code {
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose code::before,
+.prose code::after {
+  content: "";
+}
