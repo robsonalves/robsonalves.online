@@ -145,7 +145,7 @@ export default function CV() {
           </p>
         </div>
 
-        {/* ESX */}
+        {/* ESX (including Microsoft allocation) */}
         <div className="mb-8 pl-4 border-l-4 border-red-500">
           <div className="flex justify-between items-start mb-2">
             <div>
@@ -154,6 +154,31 @@ export default function CV() {
             </div>
             <span className="text-gray-500 whitespace-nowrap">March 2014 - May 2017</span>
           </div>
+
+          <div className="mb-4 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg border-l-4 border-cyan-500">
+            <div className="flex justify-between items-start mb-2">
+              <div>
+                <h4 className="text-lg font-semibold text-cyan-700 dark:text-cyan-400">Client Allocation: Microsoft</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Cloud Solutions Architect (Green Badge)</p>
+              </div>
+              <span className="text-sm text-gray-500 whitespace-nowrap">Feb 2015 - Sep 2016</span>
+            </div>
+            <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300 ml-2">
+              <li>Cloud Solutions Consultant for Microsoft Azure (via ESX partnership)</li>
+              <li>Assisted customers in Azure infrastructure setup and migrations from AWS/Mandic to Azure</li>
+              <li>Designed PaaS and IaaS solutions with optimal pricing and automated resource deallocation</li>
+              <li>Built infrastructure as code using ARM templates and PowerShell</li>
+              <li>Gathered requirements, designed solutions with diagrams, coordinated implementation</li>
+            </ul>
+            <p className="mt-2 text-xs text-gray-600 dark:text-gray-400">
+              <strong>Tools:</strong> Azure Stack, PowerShell, ARM Templates, Visio, Docker
+            </p>
+          </div>
+
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 italic">
+            As ALM/DevOps Consultant, I served various clients providing DevOps expertise and automation solutions:
+          </p>
+
           <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
             <li>Consulted various clients on DevOps culture and project automation solutions</li>
             <li>Created pipeline patterns for microservices with Java 8, implementing observability and traceability</li>
@@ -162,27 +187,7 @@ export default function CV() {
             <li>Taught clients agile frameworks (Scrum, Kanban), CI/CD best practices</li>
           </ul>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            <strong>Tools:</strong> Kubernetes, AWS, Jenkins, SonarQube, Dynatrace, ELK, Prometheus, Grafana
-          </p>
-        </div>
-
-        {/* Microsoft */}
-        <div className="mb-8 pl-4 border-l-4 border-cyan-500">
-          <div className="flex justify-between items-start mb-2">
-            <div>
-              <h3 className="text-2xl font-semibold">Cloud Architect Solution</h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400">Microsoft (Green Badge via ESX)</p>
-            </div>
-            <span className="text-gray-500 whitespace-nowrap">February 2015 - September 2016</span>
-          </div>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Assisted customers in Azure infrastructure setup and migrations from AWS/Mandic to Azure</li>
-            <li>Designed PaaS and IaaS solutions with optimal pricing and automated hardware deallocation</li>
-            <li>Built infrastructure as code using ARM templates and PowerShell</li>
-            <li>Gathered requirements, designed solutions with diagrams, coordinated implementation</li>
-          </ul>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            <strong>Tools:</strong> Azure Stack, PowerShell, ARM Templates, Visio, Docker
+            <strong>Tools:</strong> Kubernetes, AWS, Jenkins, SonarQube, Dynatrace, ELK, Prometheus, Grafana, Azure DevOps, Flux CD
           </p>
         </div>
 
