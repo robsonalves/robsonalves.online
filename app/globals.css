@@ -193,10 +193,12 @@ body {
 .prose tbody tr {
   border-bottom: 1px solid #e5e7eb;
   transition: background-color 0.2s ease;
+  background-color: #ffffff;
 }
 
 .dark .prose tbody tr {
-  border-bottom: 1px solid #374151;
+  border-bottom: 1px solid #4b5563;
+  background-color: #1f2937;
 }
 
 .prose tbody tr:hover {
@@ -204,7 +206,7 @@ body {
 }
 
 .dark .prose tbody tr:hover {
-  background-color: #1f2937;
+  background-color: #374151;
 }
 
 .prose tbody tr:last-child {
@@ -218,7 +220,7 @@ body {
 }
 
 .dark .prose tbody td {
-  color: #d1d5db;
+  color: #e5e7eb;
 }
 
 .prose tbody td:first-child {
@@ -227,7 +229,8 @@ body {
 }
 
 .dark .prose tbody td:first-child {
-  color: #f3f4f6;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* Responsive tables */
