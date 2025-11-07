@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function CV() {
   return (
     <div className="max-w-4xl mx-auto">
@@ -35,6 +37,12 @@ export default function CV() {
           >
             LinkedIn
           </a>
+          <Link
+            href="/cv/pt"
+            className="text-blue-600 hover:underline"
+          >
+            🇧🇷 Versão em Português
+          </Link>
         </div>
       </div>
 
@@ -79,7 +87,7 @@ export default function CV() {
             <li>Lead continuous improvement initiatives across multiple teams</li>
           </ul>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            <strong>Tools:</strong> GitLab, Python (Django), ReactJS (Next.js), Docker, docker-compose, WAF, AWS, Azure, OCI
+            <strong>Tools:</strong> GitLab, Python (Django), ReactJS (Next.js), Java, Flutter (Mobile), Docker, docker-compose, WAF, AWS, Azure, Azure DevOps, OCI, Terraform, Terragrunt, ServiceNow, FinOps
           </p>
         </div>
 
