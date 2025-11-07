@@ -33,10 +33,45 @@ Kubernetes `Secrets` enable you to securely store and manage sensitive informati
 
 Kubernetes supports different types of secrets:
 
-- **Opaque**: Base64-encoded data (default type)
-- **kubernetes.io/service-account-token**: Service account token and related data
-- **kubernetes.io/dockercfg**: Docker registry credentials
-- **kubernetes.io/dockerconfigjson**: Serialized `~/.docker/config.json` file
+<div class="secrets-types-grid">
+
+<div class="secret-type-card">
+<div class="secret-type-header">
+<span class="secret-type-icon">●</span>
+<h4>Opaque</h4>
+</div>
+<p><strong>Type:</strong> <code>Opaque</code></p>
+<p>Base64-encoded data (default type). Most flexible option for storing arbitrary key-value pairs.</p>
+</div>
+
+<div class="secret-type-card">
+<div class="secret-type-header">
+<span class="secret-type-icon">●</span>
+<h4>Service Account Token</h4>
+</div>
+<p><strong>Type:</strong> <code>kubernetes.io/service-account-token</code></p>
+<p>Service account token and related data for pod authentication within the cluster.</p>
+</div>
+
+<div class="secret-type-card">
+<div class="secret-type-header">
+<span class="secret-type-icon">●</span>
+<h4>Docker Registry (Legacy)</h4>
+</div>
+<p><strong>Type:</strong> <code>kubernetes.io/dockercfg</code></p>
+<p>Docker registry credentials in legacy format. Consider using dockerconfigjson instead.</p>
+</div>
+
+<div class="secret-type-card">
+<div class="secret-type-header">
+<span class="secret-type-icon">●</span>
+<h4>Docker Config JSON</h4>
+</div>
+<p><strong>Type:</strong> <code>kubernetes.io/dockerconfigjson</code></p>
+<p>Serialized <code>~/.docker/config.json</code> file for modern Docker registry authentication.</p>
+</div>
+
+</div>
 
 ## Creating Kubernetes Secrets
 

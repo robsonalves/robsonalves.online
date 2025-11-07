@@ -33,10 +33,45 @@ Os segredos do Kubernetes permitem que você armazene e gerencie informações s
 
 O Kubernetes suporta diferentes tipos de segredos:
 
-- **Opaque**: Dados codificados em Base64 (tipo padrão)
-- **kubernetes.io/service-account-token**: Token de conta de serviço e dados relacionados
-- **kubernetes.io/dockercfg**: Credenciais do registro Docker
-- **kubernetes.io/dockerconfigjson**: Arquivo `~/.docker/config.json` serializado
+<div class="secrets-types-grid">
+
+<div class="secret-type-card">
+<div class="secret-type-header">
+<span class="secret-type-icon">●</span>
+<h4>Opaque</h4>
+</div>
+<p><strong>Tipo:</strong> <code>Opaque</code></p>
+<p>Dados codificados em Base64 (tipo padrão). Opção mais flexível para armazenar pares chave-valor arbitrários.</p>
+</div>
+
+<div class="secret-type-card">
+<div class="secret-type-header">
+<span class="secret-type-icon">●</span>
+<h4>Service Account Token</h4>
+</div>
+<p><strong>Tipo:</strong> <code>kubernetes.io/service-account-token</code></p>
+<p>Token de conta de serviço e dados relacionados para autenticação de pods no cluster.</p>
+</div>
+
+<div class="secret-type-card">
+<div class="secret-type-header">
+<span class="secret-type-icon">●</span>
+<h4>Docker Registry (Legado)</h4>
+</div>
+<p><strong>Tipo:</strong> <code>kubernetes.io/dockercfg</code></p>
+<p>Credenciais do registro Docker em formato legado. Considere usar dockerconfigjson.</p>
+</div>
+
+<div class="secret-type-card">
+<div class="secret-type-header">
+<span class="secret-type-icon">●</span>
+<h4>Docker Config JSON</h4>
+</div>
+<p><strong>Tipo:</strong> <code>kubernetes.io/dockerconfigjson</code></p>
+<p>Arquivo <code>~/.docker/config.json</code> serializado para autenticação moderna em registros Docker.</p>
+</div>
+
+</div>
 
 ## Criando Segredos do Kubernetes
 
