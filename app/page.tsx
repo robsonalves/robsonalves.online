@@ -48,7 +48,7 @@ export default async function Home() {
       </section>
 
       {/* Quick Links */}
-      <section className="grid md:grid-cols-3 gap-8">
+      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <Link
           href="/cv"
           className="group p-8 border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl transition-all"
@@ -85,6 +85,19 @@ export default async function Home() {
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
             {t.home.contactCard.description}
+          </p>
+        </Link>
+
+        <Link
+          href="/github"
+          className="group p-8 border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-gray-900 dark:hover:border-gray-300 hover:shadow-xl transition-all"
+        >
+          <div className="text-4xl mb-4">🐛</div>
+          <h2 className="text-2xl font-bold mb-3 group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors">
+            {t.home.githubCard.title}
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400">
+            {t.home.githubCard.description}
           </p>
         </Link>
       </section>

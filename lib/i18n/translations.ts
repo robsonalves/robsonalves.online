@@ -26,6 +26,10 @@ export const translations = {
         title: "Contact",
         description: "Get in touch with me through social media.",
       },
+      githubCard: {
+        title: "GitHub Profile",
+        description: "View my GitHub stats, projects, and contributions.",
+      },
       expertiseCards: {
         cloud: {
           title: "Cloud Platforms",
@@ -95,6 +99,10 @@ export const translations = {
       contactCard: {
         title: "Contato",
         description: "Entre em contato através das redes sociais.",
+      },
+      githubCard: {
+        title: "Perfil GitHub",
+        description: "Veja minhas estatísticas, projetos e contribuições no GitHub.",
       },
       expertiseCards: {
         cloud: {
