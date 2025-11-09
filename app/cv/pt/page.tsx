@@ -372,6 +372,33 @@ export default function CVPT() {
         </div>
       </section>
 
+      {/* Languages */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+          Idiomas
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-6 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">Inglês</h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              <strong>Nível:</strong> B2 (Intermediário Avançado / Proficiência Profissional)
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              Fluente em contextos profissionais, documentação técnica e comunicação empresarial
+            </p>
+          </div>
+          <div className="p-6 bg-green-50 dark:bg-gray-800 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">Português</h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              <strong>Nível:</strong> Nativo
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              Língua materna - Proficiência profissional completa
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Education */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
