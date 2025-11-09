@@ -442,13 +442,13 @@ export default function CV() {
         </div>
       </section>
 
-      {/* Download CV */}
+      {/* Download Resume */}
       <div className="text-center py-8">
         <a
           href="/cv.pdf"
           className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-transform shadow-lg"
         >
-          Download PDF Version
+          Download Resume (PDF)
         </a>
       </div>
     </div>
