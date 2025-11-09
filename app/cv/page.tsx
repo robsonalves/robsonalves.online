@@ -62,6 +62,33 @@ export default function CV() {
         </div>
       </section>
 
+      {/* Languages */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+          Languages
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-6 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">English</h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              <strong>Level:</strong> B2 (Upper Intermediate / Professional Working Proficiency)
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              Fluent in professional contexts, technical documentation, and business communication
+            </p>
+          </div>
+          <div className="p-6 bg-green-50 dark:bg-gray-800 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">Portuguese</h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              <strong>Level:</strong> Native Speaker
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              Mother tongue - Full professional proficiency
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Professional Experience */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
@@ -368,33 +395,6 @@ export default function CV() {
               <li>📊 ELK Stack, Graylog</li>
               <li>📊 Dynatrace</li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Languages */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
-          Languages
-        </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 bg-blue-50 dark:bg-gray-800 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">English</h3>
-            <p className="text-gray-700 dark:text-gray-300">
-              <strong>Level:</strong> B2 (Upper Intermediate / Professional Working Proficiency)
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Fluent in professional contexts, technical documentation, and business communication
-            </p>
-          </div>
-          <div className="p-6 bg-green-50 dark:bg-gray-800 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Portuguese</h3>
-            <p className="text-gray-700 dark:text-gray-300">
-              <strong>Level:</strong> Native Speaker
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Mother tongue - Full professional proficiency
-            </p>
           </div>
         </div>
       </section>
