@@ -2,7 +2,7 @@ export const translations = {
   en: {
     nav: {
       home: "Home",
-      cv: "CV",
+      cv: "Resume",
       blog: "Blog",
       contact: "Contact",
       schedule: "Schedule",
@@ -15,7 +15,7 @@ export const translations = {
       linkedin: "LinkedIn",
       expertise: "Expertise",
       cvCard: {
-        title: "CV/Resume",
+        title: "Resume",
         description: "View my professional experience, skills, and certifications.",
       },
       blogCard: {
@@ -42,8 +42,8 @@ export const translations = {
       },
     },
     cv: {
-      title: "Curriculum Vitae",
-      download: "Download PDF Version",
+      title: "Resume",
+      download: "Download Resume (PDF)",
       experience: "Professional Experience",
       skills: "Technical Skills",
       education: "Education",
