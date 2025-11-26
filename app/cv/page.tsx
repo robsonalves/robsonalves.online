@@ -123,7 +123,7 @@ export default function CV() {
           <div className="flex justify-between items-start mb-2">
             <div>
               <h3 className="text-2xl font-semibold">DevOps Engineer / SRE / Head of Tech</h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400">Vittude (Startup)</p>
+              <p className="text-lg text-gray-600 dark:text-gray-400">Vittude</p>
             </div>
             <span className="text-gray-500 whitespace-nowrap">March 2020 - March 2024</span>
           </div>
@@ -144,7 +144,7 @@ export default function CV() {
           <div className="flex justify-between items-start mb-2">
             <div>
               <h3 className="text-2xl font-semibold">Platform Engineer / SRE</h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400">TeamIT (Portugal)</p>
+              <p className="text-lg text-gray-600 dark:text-gray-400">TeamIT - FullTime</p>
             </div>
             <span className="text-gray-500 whitespace-nowrap">March 2019 - February 2020</span>
           </div>
@@ -347,6 +347,45 @@ export default function CV() {
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             <strong>Tools:</strong> .NET Framework, SQL Server, UML
           </p>
+        </div>
+      </section>
+
+      {/* Security & Compliance */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+          Security & Compliance
+        </h2>
+        <div className="p-6 bg-gradient-to-r from-red-50 to-orange-50 dark:from-gray-800 dark:to-gray-800 rounded-lg">
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Security Frameworks & Standards</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li><strong>OWASP Top 10:</strong> Applied security controls in CI/CD pipelines to prevent injection attacks, broken authentication, XSS, and other common vulnerabilities</li>
+                <li><strong>CIS Controls:</strong> Implemented hardening practices following CIS benchmarks for AWS, Azure, and Kubernetes environments</li>
+                <li><strong>NIST Cybersecurity Framework:</strong> Applied Identify, Protect, Detect, Respond, and Recover principles in infrastructure design and incident response</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Security Practices in Daily Work</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li><strong>Pipeline Security:</strong> Integrated SAST/DAST tools, dependency scanning, and container image scanning in GitLab CI/CD</li>
+                <li><strong>Infrastructure Hardening:</strong> Applied security baselines, least privilege access (IAM), network segmentation, and encryption at rest/transit</li>
+                <li><strong>Vulnerability Management:</strong> Regular security assessments, patch management, and remediation tracking using Azure Security Center and AWS Security Hub</li>
+                <li><strong>Compliance Automation:</strong> Automated compliance checks using Policy-as-Code (OPA, Sentinel) and Infrastructure-as-Code security scanning</li>
+                <li><strong>Incident Response:</strong> Participated in security incident investigations, DDoS mitigation (WAF configuration), and post-incident reviews</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Security Tools & Technologies</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                AWS WAF, Azure Security Center, GitLab Security Dashboard, Trivy, Snyk, SonarQube,
+                HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, Network Security Groups (NSG),
+                Security Groups, CloudTrail, Azure Monitor, GuardDuty, AWS Config
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
