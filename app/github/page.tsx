@@ -7,10 +7,21 @@ export const metadata: Metadata = {
 
 async function getGitHubStats() {
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
     const response = await fetch('https://api.github.com/users/robsonalves', {
-      next: { revalidate: 3600 } // Cache for 1 hour
+      next: { revalidate: 3600 }, // Cache for 1 hour
+      signal: controller.signal,
     });
-    if (!response.ok) throw new Error('Failed to fetch');
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      console.warn(`GitHub API returned status ${response.status}`);
+      throw new Error(`GitHub API error: ${response.status}`);
+    }
+
     const data = await response.json();
     return {
       repos: data.public_repos,
@@ -19,6 +30,13 @@ async function getGitHubStats() {
       yearsOnGitHub: new Date().getFullYear() - new Date(data.created_at).getFullYear(),
     };
   } catch (error) {
+    // Log error silently without stack trace
+    if (error instanceof Error && error.name === 'AbortError') {
+      console.warn('GitHub API request timed out after 5 seconds');
+    } else {
+      console.warn('GitHub API request failed, using fallback values');
+    }
+
     // Fallback to static values if API fails
     return {
       repos: 119,
