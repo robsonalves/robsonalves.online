@@ -13,7 +13,7 @@ export default function CVPT() {
           Engenheiro DevOps | SRE | Arquiteto de Nuvem
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm mb-2">
-          <span>📍 Rua Francisco Lamas, 55 - CEP: 08780790</span>
+          <span>📍 Mogi das Cruzes, SP - Brasil</span>
         </div>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span>📧 robson.infoo@gmail.com</span>
@@ -485,7 +485,7 @@ export default function CVPT() {
       <div className="text-center py-8">
         <a
           href="/cv-pt.pdf"
-          className="btn-primary text-lg px-8 py-4"
+          className="btn-primary text-lg px-8 py-4 no-print"
         >
           Baixar Versão em PDF
         </a>

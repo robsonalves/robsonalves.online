@@ -13,7 +13,7 @@ export default function CV() {
           DevOps Engineer | SRE | Cloud Architect
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm mb-2">
-          <span>📍 Rua Francisco Lamas, 55 - CEP: 08780790</span>
+          <span>📍 Mogi das Cruzes, SP - Brazil</span>
         </div>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span>📧 robson.infoo@gmail.com</span>
@@ -485,7 +485,7 @@ export default function CV() {
       <div className="text-center py-8">
         <a
           href="/cv.pdf"
-          className="btn-primary text-lg px-8 py-4"
+          className="btn-primary text-lg px-8 py-4 no-print"
         >
           Download Resume (PDF)
         </a>
