@@ -28,7 +28,7 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: str
     <button
       onClick={switchLanguage}
       disabled={isPending}
-      className="px-3 py-1 border rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors disabled:opacity-50"
+      className="font-mono-ui text-xs px-3 py-1.5 border border-[var(--border)] rounded hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors disabled:opacity-50"
       aria-label="Switch language"
     >
       {locale === "pt" ? "🇺🇸 EN" : "🇧🇷 PT"}
