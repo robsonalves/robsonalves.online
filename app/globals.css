@@ -475,6 +475,14 @@ body {
     list-style-position: outside;
   }
 
+  /* Timeline entries already push their content right via the accent-bar
+     div's padding-left (8pt) — without this, their bullets land ~9pt
+     further right than every other list in the document (Security,
+     Skills), so text stops lining up bullet-to-bullet across sections. */
+  .cv-content [class*="border-l-4"] li {
+    margin-left: 0.3em !important;
+  }
+
   .cv-content [class*="rounded"] {
     border-radius: 0 !important;
   }
