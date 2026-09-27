@@ -23,22 +23,22 @@ describe('blog', () => {
       const now = new Date('2024-01-15T12:00:00Z');
       vi.setSystemTime(now);
 
-      mockedFs.existsSync.mockImplementation((path) => {
-        if (path === mockContentDirectory) return true;
-        if (path === path.join(mockContentDirectory, 'en')) return true;
-        if (path === path.join(mockContentDirectory, 'pt')) return true;
+      mockedFs.existsSync.mockImplementation((p: fs.PathLike) => {
+        if (p === mockContentDirectory) return true;
+        if (p === path.join(mockContentDirectory, 'en')) return true;
+        if (p === path.join(mockContentDirectory, 'pt')) return true;
         return false;
       });
 
-      mockedFs.readdirSync.mockImplementation((path) => {
-        if (path === path.join(mockContentDirectory, 'en')) {
+      mockedFs.readdirSync.mockImplementation((p: fs.PathLike) => {
+        if (p === path.join(mockContentDirectory, 'en')) {
           return ['post1.md', 'post2.md'] as any;
         }
         return [] as any;
       });
 
-      mockedFs.readFileSync.mockImplementation((path) => {
-        if (path.toString().includes('post1.md')) {
+      mockedFs.readFileSync.mockImplementation((p: fs.PathOrFileDescriptor) => {
+        if (p.toString().includes('post1.md')) {
           return `---
 title: Post 1
 date: 2024-01-01
@@ -47,7 +47,7 @@ tags: [test]
 ---
 Content 1`;
         }
-        if (path.toString().includes('post2.md')) {
+        if (p.toString().includes('post2.md')) {
           return `---
 title: Post 2
 date: 2024-01-02
@@ -70,22 +70,22 @@ Content 2`;
       const now = new Date('2024-01-15T12:00:00Z');
       vi.setSystemTime(now);
 
-      mockedFs.existsSync.mockImplementation((path) => {
-        if (path === mockContentDirectory) return true;
-        if (path === path.join(mockContentDirectory, 'en')) return true;
-        if (path === path.join(mockContentDirectory, 'pt')) return true;
+      mockedFs.existsSync.mockImplementation((p: fs.PathLike) => {
+        if (p === mockContentDirectory) return true;
+        if (p === path.join(mockContentDirectory, 'en')) return true;
+        if (p === path.join(mockContentDirectory, 'pt')) return true;
         return false;
       });
 
-      mockedFs.readdirSync.mockImplementation((path) => {
-        if (path === path.join(mockContentDirectory, 'en')) {
+      mockedFs.readdirSync.mockImplementation((p: fs.PathLike) => {
+        if (p === path.join(mockContentDirectory, 'en')) {
           return ['post1.md', 'post2.md', 'post3.md'] as any;
         }
         return [] as any;
       });
 
-      mockedFs.readFileSync.mockImplementation((path) => {
-        if (path.toString().includes('post1.md')) {
+      mockedFs.readFileSync.mockImplementation((p: fs.PathOrFileDescriptor) => {
+        if (p.toString().includes('post1.md')) {
           return `---
 title: Post 1
 date: 2024-01-01
@@ -95,7 +95,7 @@ publishDate: 2024-01-10T00:00:00Z
 ---
 Content 1`;
         }
-        if (path.toString().includes('post2.md')) {
+        if (p.toString().includes('post2.md')) {
           return `---
 title: Post 2
 date: 2024-01-02
@@ -105,7 +105,7 @@ publishDate: 2024-01-20T00:00:00Z
 ---
 Content 2`;
         }
-        if (path.toString().includes('post3.md')) {
+        if (p.toString().includes('post3.md')) {
           return `---
 title: Post 3
 date: 2024-01-03
@@ -128,22 +128,22 @@ Content 3`;
       const now = new Date('2024-01-15T12:00:00Z');
       vi.setSystemTime(now);
 
-      mockedFs.existsSync.mockImplementation((path) => {
-        if (path === mockContentDirectory) return true;
-        if (path === path.join(mockContentDirectory, 'en')) return true;
-        if (path === path.join(mockContentDirectory, 'pt')) return true;
+      mockedFs.existsSync.mockImplementation((p: fs.PathLike) => {
+        if (p === mockContentDirectory) return true;
+        if (p === path.join(mockContentDirectory, 'en')) return true;
+        if (p === path.join(mockContentDirectory, 'pt')) return true;
         return false;
       });
 
-      mockedFs.readdirSync.mockImplementation((path) => {
-        if (path === path.join(mockContentDirectory, 'en')) {
+      mockedFs.readdirSync.mockImplementation((p: fs.PathLike) => {
+        if (p === path.join(mockContentDirectory, 'en')) {
           return ['post1.md', 'post2.md', 'post3.md', 'post4.md'] as any;
         }
         return [] as any;
       });
 
-      mockedFs.readFileSync.mockImplementation((path) => {
-        if (path.toString().includes('post1.md')) {
+      mockedFs.readFileSync.mockImplementation((p: fs.PathOrFileDescriptor) => {
+        if (p.toString().includes('post1.md')) {
           return `---
 title: Post 1
 date: 2024-01-01
@@ -153,7 +153,7 @@ publishDate: 2024-01-05T00:00:00Z
 ---
 Content 1`;
         }
-        if (path.toString().includes('post2.md')) {
+        if (p.toString().includes('post2.md')) {
           return `---
 title: Post 2
 date: 2024-01-02
@@ -163,7 +163,7 @@ publishDate: 2024-01-15T12:00:00Z
 ---
 Content 2`;
         }
-        if (path.toString().includes('post3.md')) {
+        if (p.toString().includes('post3.md')) {
           return `---
 title: Post 3
 date: 2024-01-03
@@ -173,7 +173,7 @@ publishDate: 2024-01-20T00:00:00Z
 ---
 Content 3`;
         }
-        if (path.toString().includes('post4.md')) {
+        if (p.toString().includes('post4.md')) {
           return `---
 title: Post 4
 date: 2024-01-04
