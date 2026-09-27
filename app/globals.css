@@ -456,8 +456,7 @@ body {
     margin-top: 2pt;
   }
 
-  .cv-content p,
-  .cv-content li {
+  .cv-content p {
     text-align: justify;
     font-size: 10pt;
     line-height: 1.4;
@@ -466,19 +465,25 @@ body {
   .cv-content ul,
   .cv-content ol {
     margin: 4pt 0;
-    padding-left: 14pt;
+    padding-left: 0;
   }
 
   .cv-content li {
-    margin: 2pt 0 !important;
+    font-size: 10pt;
+    line-height: 1.4;
+    margin: 2pt 0 2pt 1.1em !important;
+    list-style-position: outside;
   }
 
   .cv-content [class*="rounded"] {
     border-radius: 0 !important;
   }
 
+  /* Reset every Tailwind border utility to none first — section boxes,
+     the header rule, and the timeline markers re-add exactly the border
+     they need further down, so nothing else ends up looking like a box. */
   .cv-content [class*="border"] {
-    border-color: #000 !important;
+    border: none !important;
   }
 
   .cv-content [class*="mb-12"] {
@@ -496,10 +501,14 @@ body {
 
   .cv-content [class*="p-6"],
   .cv-content [class*="p-4"] {
-    padding: 6pt 10pt !important;
+    padding: 0 !important;
+    margin-bottom: 10pt;
   }
 
-  /* Applied after the padding reset above so padding-left wins the cascade */
+  .cv-content [class*="border-b-2"] {
+    border-bottom: 1pt solid #000 !important;
+  }
+
   .cv-content [class*="border-l-4"] {
     border-left: 2pt solid #000 !important;
     padding-left: 8pt !important;
