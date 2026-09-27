@@ -12,25 +12,25 @@ export default async function CV({
       : 'Mogi das Cruzes, SP - Brazil';
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto cv-content">
       {/* Header */}
       <div className="text-center mb-12 pb-8 border-b-2 border-[var(--border)]">
         <h1 className="text-5xl font-bold mb-4">ROBSON ALVES</h1>
         <p className="text-lg text-[var(--muted)] mb-4">
           37 years old, married, Brazilian, 1 child
         </p>
-        <p className="text-xl text-[var(--muted)] mb-2">
+        <p className="text-xl text-[var(--muted)] mb-2 print:hidden">
           DevOps Engineer | SRE | Cloud Architect
         </p>
-        <div className="flex flex-wrap justify-center gap-4 text-sm mb-2">
+        <div className="flex flex-wrap justify-center gap-4 text-sm mb-2 print:hidden">
           <span>📍 {address}</span>
         </div>
-        <div className="flex flex-wrap justify-center gap-4 text-sm">
+        <div className="flex flex-wrap justify-center gap-4 text-sm print:hidden">
           <span>📧 robson.infoo@gmail.com</span>
           <span>📧 hi@robsonalves.online</span>
           <span>📱 +55 11 95040-5840</span>
         </div>
-        <div className="flex justify-center gap-4 mt-4">
+        <div className="flex justify-center gap-4 mt-4 print:hidden">
           <a
             href="https://github.com/robsonalves"
             target="_blank"
@@ -54,11 +54,20 @@ export default async function CV({
             🇧🇷 Versão em Português
           </Link>
         </div>
+
+        {/* Print-only contact block, matches the traditional printed-resume format */}
+        <div className="hidden print:block text-sm text-left">
+          <p>{address}</p>
+          <p>
+            Mobile: +55 11 95040-5840 | Email: robson.infoo@gmail.com / hi@robsonalves.online
+          </p>
+          <p>Website: robsonalves.online</p>
+        </div>
       </div>
 
       {/* Professional Summary */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Professional Summary
         </h2>
         <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
@@ -74,7 +83,7 @@ export default async function CV({
 
       {/* Languages */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Languages
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -101,7 +110,7 @@ export default async function CV({
 
       {/* Professional Experience */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Professional Experience
         </h2>
 
@@ -362,7 +371,7 @@ export default async function CV({
 
       {/* Security & Compliance */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Security & Compliance
         </h2>
         <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
@@ -401,48 +410,48 @@ export default async function CV({
 
       {/* Skills */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Technical Skills
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
             <h3 className="text-xl font-semibold mb-3">Cloud Platforms</h3>
             <ul className="space-y-1">
-              <li>☁️ AWS (EKS, ECS, Lambda, RDS, DynamoDB, CloudFormation)</li>
-              <li>☁️ Azure (AKS, DevOps, ARM Templates, OCI)</li>
-              <li>☁️ Oracle Cloud Infrastructure (OCI)</li>
-              <li>☁️ GCP</li>
+              <li><span className="print:hidden">☁️ </span>AWS (EKS, ECS, Lambda, RDS, DynamoDB, CloudFormation)</li>
+              <li><span className="print:hidden">☁️ </span>Azure (AKS, DevOps, ARM Templates, OCI)</li>
+              <li><span className="print:hidden">☁️ </span>Oracle Cloud Infrastructure (OCI)</li>
+              <li><span className="print:hidden">☁️ </span>GCP</li>
             </ul>
           </div>
 
           <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
             <h3 className="text-xl font-semibold mb-3">DevOps & Infrastructure</h3>
             <ul className="space-y-1">
-              <li>🚀 Kubernetes, Docker, EKS, AKS</li>
-              <li>🚀 Terraform, Terragrunt, CloudFormation</li>
-              <li>🚀 GitOps, Flux CD</li>
-              <li>🚀 Jenkins, GitLab CI, Azure DevOps, GitHub Actions</li>
+              <li><span className="print:hidden">🚀 </span>Kubernetes, Docker, EKS, AKS</li>
+              <li><span className="print:hidden">🚀 </span>Terraform, Terragrunt, CloudFormation</li>
+              <li><span className="print:hidden">🚀 </span>GitOps, Flux CD</li>
+              <li><span className="print:hidden">🚀 </span>Jenkins, GitLab CI, Azure DevOps, GitHub Actions</li>
             </ul>
           </div>
 
           <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
             <h3 className="text-xl font-semibold mb-3">Programming & Scripting</h3>
             <ul className="space-y-1">
-              <li>💻 Python (Django, AWS SDK, Automation)</li>
-              <li>💻 TypeScript/JavaScript (NodeJS, ReactJS, Next.js)</li>
-              <li>💻 C# / .NET Framework (MVC, Web API, SSIS)</li>
-              <li>💻 Shell/Bash scripting, PowerShell</li>
-              <li>💻 SQL (SQL Server, Oracle, DynamoDB)</li>
+              <li><span className="print:hidden">💻 </span>Python (Django, AWS SDK, Automation)</li>
+              <li><span className="print:hidden">💻 </span>TypeScript/JavaScript (NodeJS, ReactJS, Next.js)</li>
+              <li><span className="print:hidden">💻 </span>C# / .NET Framework (MVC, Web API, SSIS)</li>
+              <li><span className="print:hidden">💻 </span>Shell/Bash scripting, PowerShell</li>
+              <li><span className="print:hidden">💻 </span>SQL (SQL Server, Oracle, DynamoDB)</li>
             </ul>
           </div>
 
           <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
             <h3 className="text-xl font-semibold mb-3">Monitoring & Security</h3>
             <ul className="space-y-1">
-              <li>🔒 AWS WAF, Security Hardening</li>
-              <li>📊 Prometheus, Grafana, NewRelic</li>
-              <li>📊 ELK Stack, Graylog</li>
-              <li>📊 Dynatrace</li>
+              <li><span className="print:hidden">🔒 </span>AWS WAF, Security Hardening</li>
+              <li><span className="print:hidden">📊 </span>Prometheus, Grafana, NewRelic</li>
+              <li><span className="print:hidden">📊 </span>ELK Stack, Graylog</li>
+              <li><span className="print:hidden">📊 </span>Dynatrace</li>
             </ul>
           </div>
         </div>
@@ -450,7 +459,7 @@ export default async function CV({
 
       {/* Education */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Education
         </h2>
 
@@ -468,7 +477,7 @@ export default async function CV({
 
       {/* Additional Info */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Additional Activities
         </h2>
         <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">

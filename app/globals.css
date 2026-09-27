@@ -422,6 +422,109 @@ body {
     border-color: #d4d4d8 !important;
     box-shadow: none !important;
   }
+
+  /* Compact, ATS-friendly layout for the /cv and /cv/pt printouts —
+     mirrors the traditional boxed-header resume format instead of the
+     card-based web layout. */
+  .cv-content * {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+  }
+
+  .cv-content {
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  .cv-content h1 {
+    font-size: 22pt;
+    margin-bottom: 4pt;
+  }
+
+  .cv-content .cv-h2 {
+    font-size: 13pt;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border: 1pt solid #000;
+    padding: 5pt 10pt;
+    margin: 16pt 0 10pt 0;
+  }
+
+  .cv-content h3 {
+    font-size: 12pt;
+    margin-top: 2pt;
+  }
+
+  .cv-content p {
+    text-align: justify;
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  .cv-content ul,
+  .cv-content ol {
+    margin: 4pt 0;
+    padding-left: 0;
+  }
+
+  .cv-content li {
+    font-size: 10pt;
+    line-height: 1.4;
+    margin: 2pt 0 2pt 1.1em !important;
+    list-style-position: outside;
+  }
+
+  /* Timeline entries already push their content right via the accent-bar
+     div's padding-left (8pt) — without this, their bullets land ~9pt
+     further right than every other list in the document (Security,
+     Skills), so text stops lining up bullet-to-bullet across sections. */
+  .cv-content [class*="border-l-4"] li {
+    margin-left: 0.3em !important;
+  }
+
+  .cv-content [class*="rounded"] {
+    border-radius: 0 !important;
+  }
+
+  /* Reset every Tailwind border utility to none first — section boxes,
+     the header rule, and the timeline markers re-add exactly the border
+     they need further down, so nothing else ends up looking like a box. */
+  .cv-content [class*="border"] {
+    border: none !important;
+  }
+
+  .cv-content [class*="mb-12"] {
+    margin-bottom: 10pt !important;
+  }
+
+  .cv-content [class*="mb-8"] {
+    margin-bottom: 8pt !important;
+    break-inside: avoid;
+  }
+
+  .cv-content [class*="mb-6"] {
+    margin-bottom: 4pt !important;
+  }
+
+  .cv-content [class*="p-6"],
+  .cv-content [class*="p-4"] {
+    padding: 0 !important;
+    margin-bottom: 10pt;
+  }
+
+  .cv-content [class*="border-b-2"] {
+    border-bottom: 1pt solid #000 !important;
+  }
+
+  .cv-content [class*="border-l-4"] {
+    border-left: 2pt solid #000 !important;
+    padding-left: 8pt !important;
+  }
+
+  .cv-content a {
+    text-decoration: none !important;
+  }
 }
 
 /* Responsive tables */

@@ -12,25 +12,25 @@ export default async function CVPT({
       : 'Mogi das Cruzes, SP - Brasil';
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto cv-content">
       {/* Header */}
       <div className="text-center mb-12 pb-8 border-b-2 border-[var(--border)]">
         <h1 className="text-5xl font-bold mb-4">ROBSON ALVES</h1>
         <p className="text-lg text-[var(--muted)] mb-4">
           37 anos, casado, brasileiro, 1 filho
         </p>
-        <p className="text-xl text-[var(--muted)] mb-2">
+        <p className="text-xl text-[var(--muted)] mb-2 print:hidden">
           Engenheiro DevOps | SRE | Arquiteto de Nuvem
         </p>
-        <div className="flex flex-wrap justify-center gap-4 text-sm mb-2">
+        <div className="flex flex-wrap justify-center gap-4 text-sm mb-2 print:hidden">
           <span>📍 {address}</span>
         </div>
-        <div className="flex flex-wrap justify-center gap-4 text-sm">
+        <div className="flex flex-wrap justify-center gap-4 text-sm print:hidden">
           <span>📧 robson.infoo@gmail.com</span>
           <span>📧 hi@robsonalves.online</span>
           <span>📱 +55 11 95040-5840</span>
         </div>
-        <div className="flex justify-center gap-4 mt-4">
+        <div className="flex justify-center gap-4 mt-4 print:hidden">
           <a
             href="https://github.com/robsonalves"
             target="_blank"
@@ -54,11 +54,20 @@ export default async function CVPT({
             🇬🇧 English Version
           </Link>
         </div>
+
+        {/* Bloco só-impressão, no formato tradicional do currículo em PDF */}
+        <div className="hidden print:block text-sm text-left">
+          <p>{address}</p>
+          <p>
+            Celular: +55 11 95040-5840 | Email: robson.infoo@gmail.com / hi@robsonalves.online
+          </p>
+          <p>Website: robsonalves.online</p>
+        </div>
       </div>
 
       {/* Professional Summary */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Resumo Profissional
         </h2>
         <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
@@ -74,7 +83,7 @@ export default async function CVPT({
 
       {/* Languages */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Idiomas
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -101,7 +110,7 @@ export default async function CVPT({
 
       {/* Professional Experience */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Experiência Profissional
         </h2>
 
@@ -362,7 +371,7 @@ export default async function CVPT({
 
       {/* Segurança & Compliance */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Segurança & Compliance
         </h2>
         <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
@@ -401,48 +410,48 @@ export default async function CVPT({
 
       {/* Skills */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Habilidades Técnicas
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
             <h3 className="text-xl font-semibold mb-3">Plataformas Cloud</h3>
             <ul className="space-y-1">
-              <li>☁️ AWS (EKS, ECS, Lambda, RDS, DynamoDB, CloudFormation)</li>
-              <li>☁️ Azure (AKS, DevOps, ARM Templates, OCI)</li>
-              <li>☁️ Oracle Cloud Infrastructure (OCI)</li>
-              <li>☁️ GCP</li>
+              <li><span className="print:hidden">☁️ </span>AWS (EKS, ECS, Lambda, RDS, DynamoDB, CloudFormation)</li>
+              <li><span className="print:hidden">☁️ </span>Azure (AKS, DevOps, ARM Templates, OCI)</li>
+              <li><span className="print:hidden">☁️ </span>Oracle Cloud Infrastructure (OCI)</li>
+              <li><span className="print:hidden">☁️ </span>GCP</li>
             </ul>
           </div>
 
           <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
             <h3 className="text-xl font-semibold mb-3">DevOps & Infraestrutura</h3>
             <ul className="space-y-1">
-              <li>🚀 Kubernetes, Docker, EKS, AKS</li>
-              <li>🚀 Terraform, Terragrunt, CloudFormation</li>
-              <li>🚀 GitOps, Flux CD</li>
-              <li>🚀 Jenkins, GitLab CI, Azure DevOps, GitHub Actions</li>
+              <li><span className="print:hidden">🚀 </span>Kubernetes, Docker, EKS, AKS</li>
+              <li><span className="print:hidden">🚀 </span>Terraform, Terragrunt, CloudFormation</li>
+              <li><span className="print:hidden">🚀 </span>GitOps, Flux CD</li>
+              <li><span className="print:hidden">🚀 </span>Jenkins, GitLab CI, Azure DevOps, GitHub Actions</li>
             </ul>
           </div>
 
           <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
             <h3 className="text-xl font-semibold mb-3">Programação & Scripting</h3>
             <ul className="space-y-1">
-              <li>💻 Python (Django, AWS SDK, Automação)</li>
-              <li>💻 TypeScript/JavaScript (NodeJS, ReactJS, Next.js)</li>
-              <li>💻 C# / .NET Framework (MVC, Web API, SSIS)</li>
-              <li>💻 Shell/Bash scripting, PowerShell</li>
-              <li>💻 SQL (SQL Server, Oracle, DynamoDB)</li>
+              <li><span className="print:hidden">💻 </span>Python (Django, AWS SDK, Automação)</li>
+              <li><span className="print:hidden">💻 </span>TypeScript/JavaScript (NodeJS, ReactJS, Next.js)</li>
+              <li><span className="print:hidden">💻 </span>C# / .NET Framework (MVC, Web API, SSIS)</li>
+              <li><span className="print:hidden">💻 </span>Shell/Bash scripting, PowerShell</li>
+              <li><span className="print:hidden">💻 </span>SQL (SQL Server, Oracle, DynamoDB)</li>
             </ul>
           </div>
 
           <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
             <h3 className="text-xl font-semibold mb-3">Monitoramento & Segurança</h3>
             <ul className="space-y-1">
-              <li>🔒 AWS WAF, Hardening de Segurança</li>
-              <li>📊 Prometheus, Grafana, NewRelic</li>
-              <li>📊 ELK Stack, Graylog</li>
-              <li>📊 Dynatrace</li>
+              <li><span className="print:hidden">🔒 </span>AWS WAF, Hardening de Segurança</li>
+              <li><span className="print:hidden">📊 </span>Prometheus, Grafana, NewRelic</li>
+              <li><span className="print:hidden">📊 </span>ELK Stack, Graylog</li>
+              <li><span className="print:hidden">📊 </span>Dynatrace</li>
             </ul>
           </div>
         </div>
@@ -450,7 +459,7 @@ export default async function CVPT({
 
       {/* Education */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Formação Acadêmica
         </h2>
 
@@ -468,7 +477,7 @@ export default async function CVPT({
 
       {/* Additional Info */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-[var(--accent)]">
+        <h2 className="cv-h2 text-3xl font-bold mb-6 text-[var(--accent)]">
           Atividades Adicionais
         </h2>
         <div className="p-6 bg-[var(--surface)] border border-[var(--border)] rounded-lg">
