@@ -1,19 +1,29 @@
 import Link from 'next/link';
 
-export default function CV() {
+export default async function CV({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { src } = await searchParams;
+  const address =
+    src === 'pdf'
+      ? 'Rua Francisco Lamas, 55 - CEP: 08780790'
+      : 'Mogi das Cruzes, SP - Brazil';
+
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}
       <div className="text-center mb-12 pb-8 border-b-2 border-[var(--border)]">
         <h1 className="text-5xl font-bold mb-4">ROBSON ALVES</h1>
         <p className="text-lg text-[var(--muted)] mb-4">
-          36 years old, married, Brazilian, 1 child
+          37 years old, married, Brazilian, 1 child
         </p>
         <p className="text-xl text-[var(--muted)] mb-2">
           DevOps Engineer | SRE | Cloud Architect
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm mb-2">
-          <span>📍 Rua Francisco Lamas, 55 - CEP: 08780790</span>
+          <span>📍 {address}</span>
         </div>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span>📧 robson.infoo@gmail.com</span>
@@ -485,7 +495,7 @@ export default function CV() {
       <div className="text-center py-8">
         <a
           href="/cv.pdf"
-          className="btn-primary text-lg px-8 py-4"
+          className="btn-primary text-lg px-8 py-4 no-print"
         >
           Download Resume (PDF)
         </a>

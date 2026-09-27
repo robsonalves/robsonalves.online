@@ -15,6 +15,7 @@ export interface BlogPost {
   content: string;
   language: 'en' | 'pt';
   image?: string; // Cover image URL
+  publishDate?: string;
 }
 
 export function getAllPosts(language?: 'en' | 'pt'): BlogPost[] {
@@ -54,7 +55,16 @@ export function getAllPosts(language?: 'en' | 'pt'): BlogPost[] {
           content,
           language: lang as 'en' | 'pt',
           image: data.image,
+          publishDate: data.publishDate,
         };
+      })
+      .filter((post) => {
+        // If no publishDate is set, show the post immediately
+        if (!post.publishDate) {
+          return true;
+        }
+        // Only show posts where publishDate is in the past or today
+        return new Date(post.publishDate) <= new Date();
       });
 
     allPostsData.push(...postsData);
@@ -91,7 +101,13 @@ export function getPostBySlug(slug: string, language: 'en' | 'pt' = 'en'): BlogP
       content,
       language: language,
       image: data.image,
+      publishDate: data.publishDate,
     };
+
+    // If publish date is in the future, treat the post as not found yet
+    if (post.publishDate && new Date(post.publishDate) > new Date()) {
+      return null;
+    }
 
     return post;
   } catch (error) {

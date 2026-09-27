@@ -1,19 +1,29 @@
 import Link from 'next/link';
 
-export default function CVPT() {
+export default async function CVPT({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { src } = await searchParams;
+  const address =
+    src === 'pdf'
+      ? 'Rua Francisco Lamas, 55 - CEP: 08780790'
+      : 'Mogi das Cruzes, SP - Brasil';
+
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}
       <div className="text-center mb-12 pb-8 border-b-2 border-[var(--border)]">
         <h1 className="text-5xl font-bold mb-4">ROBSON ALVES</h1>
         <p className="text-lg text-[var(--muted)] mb-4">
-          36 anos, casado, brasileiro, 1 filho
+          37 anos, casado, brasileiro, 1 filho
         </p>
         <p className="text-xl text-[var(--muted)] mb-2">
           Engenheiro DevOps | SRE | Arquiteto de Nuvem
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm mb-2">
-          <span>📍 Rua Francisco Lamas, 55 - CEP: 08780790</span>
+          <span>📍 {address}</span>
         </div>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span>📧 robson.infoo@gmail.com</span>
@@ -485,7 +495,7 @@ export default function CVPT() {
       <div className="text-center py-8">
         <a
           href="/cv-pt.pdf"
-          className="btn-primary text-lg px-8 py-4"
+          className="btn-primary text-lg px-8 py-4 no-print"
         >
           Baixar Versão em PDF
         </a>
