@@ -7,7 +7,7 @@ export default function CVPT() {
       <div className="text-center mb-12 pb-8 border-b-2 border-[var(--border)]">
         <h1 className="text-5xl font-bold mb-4">ROBSON ALVES</h1>
         <p className="text-lg text-[var(--muted)] mb-4">
-          36 anos, casado, brasileiro, 1 filho
+          37 anos, casado, brasileiro, 1 filho
         </p>
         <p className="text-xl text-[var(--muted)] mb-2">
           Engenheiro DevOps | SRE | Arquiteto de Nuvem

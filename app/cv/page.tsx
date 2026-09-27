@@ -7,7 +7,7 @@ export default function CV() {
       <div className="text-center mb-12 pb-8 border-b-2 border-[var(--border)]">
         <h1 className="text-5xl font-bold mb-4">ROBSON ALVES</h1>
         <p className="text-lg text-[var(--muted)] mb-4">
-          36 years old, married, Brazilian, 1 child
+          37 years old, married, Brazilian, 1 child
         </p>
         <p className="text-xl text-[var(--muted)] mb-2">
           DevOps Engineer | SRE | Cloud Architect
