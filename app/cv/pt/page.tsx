@@ -1,6 +1,16 @@
 import Link from 'next/link';
 
-export default function CVPT() {
+export default async function CVPT({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { src } = await searchParams;
+  const address =
+    src === 'pdf'
+      ? 'Rua Francisco Lamas, 55 - CEP: 08780790'
+      : 'Mogi das Cruzes, SP - Brasil';
+
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}
@@ -13,7 +23,7 @@ export default function CVPT() {
           Engenheiro DevOps | SRE | Arquiteto de Nuvem
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm mb-2">
-          <span>📍 Mogi das Cruzes, SP - Brasil</span>
+          <span>📍 {address}</span>
         </div>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span>📧 robson.infoo@gmail.com</span>
