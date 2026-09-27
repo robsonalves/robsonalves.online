@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,6 +7,17 @@ import { getLocale } from "@/lib/i18n/get-locale";
 import { useTranslations } from "@/lib/i18n/use-translations";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
+});
+
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Robson Alves - DevOps Engineer | SRE | Cloud Architect",
@@ -26,8 +38,8 @@ export default async function RootLayout({
   const t = useTranslations(locale);
 
   return (
-    <html lang={locale}>
-      <body className="min-h-screen flex flex-col">
+    <html lang={locale} className={`${mono.variable} ${sans.variable}`}>
+      <body className="min-h-screen flex flex-col font-sans">
         <Header locale={locale} translations={t.nav} />
         <main className="flex-1 max-w-5xl mx-auto px-4 py-8 w-full">
           {children}

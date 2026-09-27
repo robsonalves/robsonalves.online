@@ -11,6 +11,22 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        surface: "var(--surface)",
+        border: "var(--border)",
+        muted: "var(--muted)",
+        accent: {
+          DEFAULT: "var(--accent)",
+          soft: "var(--accent-soft)",
+        },
+        signal: {
+          green: "var(--signal-green)",
+          amber: "var(--signal-amber)",
+          red: "var(--signal-red)",
+        },
+      },
+      fontFamily: {
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui"],
       },
     },
   },

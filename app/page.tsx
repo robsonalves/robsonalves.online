@@ -1,4 +1,16 @@
 import Link from "next/link";
+import {
+  CalendarClock,
+  FileText,
+  Newspaper,
+  Mail,
+  BarChart3,
+  Cloud,
+  Workflow,
+  ShieldCheck,
+  ArrowRight,
+} from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { useTranslations } from "@/lib/i18n/use-translations";
 
@@ -7,119 +19,136 @@ export default async function Home() {
   const t = useTranslations(locale);
 
   return (
-    <div className="space-y-16 py-8">
+    <div className="space-y-16 py-4">
       {/* Hero Section */}
-      <section className="text-center space-y-6 py-20">
-        <div className="inline-block">
-          <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      <section className="grid md:grid-cols-2 gap-10 items-center py-8">
+        <div className="space-y-6">
+          <p className="section-label">{t.home.subtitle}</p>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
             {t.home.title}
           </h1>
+          <p className="text-lg text-[var(--muted)] leading-relaxed max-w-xl">
+            {t.home.description}
+          </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <a
+              href="https://github.com/robsonalves"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              <GithubIcon size={18} />
+              {t.home.github}
+            </a>
+            <a
+              href="https://linkedin.com/in/robsonalves"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              <LinkedinIcon size={18} />
+              {t.home.linkedin}
+            </a>
+            <Link href="/schedule" className="btn-primary">
+              <CalendarClock size={18} />
+              {locale === "pt" ? "Agende uma Conversa" : "Schedule a Call"}
+            </Link>
+          </div>
         </div>
-        <p className="text-3xl font-semibold text-gray-700 dark:text-gray-300">
-          {t.home.subtitle}
-        </p>
-        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          {t.home.description}
-        </p>
-        <div className="flex flex-wrap gap-4 justify-center pt-4">
-          <a
-            href="https://github.com/robsonalves"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg font-semibold hover:scale-105 transition-transform"
-          >
-            {t.home.github}
-          </a>
-          <a
-            href="https://linkedin.com/in/robsonalves"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:scale-105 transition-transform"
-          >
-            {t.home.linkedin}
-          </a>
-          <Link
-            href="/schedule"
-            className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-xl flex items-center gap-2"
-          >
-            📅 {locale === 'pt' ? 'Agende uma Conversa' : 'Schedule a Call'}
-          </Link>
+
+        <div className="terminal-window font-mono-ui text-sm">
+          <div className="terminal-chrome">
+            <span className="terminal-dot bg-[var(--signal-red)]" />
+            <span className="terminal-dot bg-[var(--signal-amber)]" />
+            <span className="terminal-dot bg-[var(--signal-green)]" />
+            <span className="ml-2 text-xs text-[var(--muted)]">
+              robson@ops:~
+            </span>
+          </div>
+          <div className="p-5 space-y-2">
+            <p>
+              <span className="text-[var(--accent)]">$</span> whoami
+            </p>
+            <p className="text-[var(--muted)]">Robson Alves</p>
+            <p>
+              <span className="text-[var(--accent)]">$</span> role --current
+            </p>
+            <p className="text-[var(--muted)]">DevOps Engineer · SRE · Cloud Architect</p>
+            <p>
+              <span className="text-[var(--accent)]">$</span> stack --primary
+            </p>
+            <p className="text-[var(--muted)]">AWS · Azure · OCI · Kubernetes · Terraform</p>
+            <p>
+              <span className="text-[var(--accent)]">$</span>{" "}
+              <span className="cursor-blink" />
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Quick Links */}
-      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <Link
-          href="/cv"
-          className="group p-8 border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl transition-all"
-        >
-          <div className="text-4xl mb-4">📋</div>
-          <h2 className="text-2xl font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-            {t.home.cvCard.title}
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            {t.home.cvCard.description}
-          </p>
+      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <Link href="/cv" className="group surface-card p-6 flex flex-col gap-3">
+          <FileText className="text-[var(--accent)]" size={28} />
+          <h2 className="text-lg font-semibold">{t.home.cvCard.title}</h2>
+          <p className="text-sm text-[var(--muted)]">{t.home.cvCard.description}</p>
+          <span className="mt-auto text-xs font-mono-ui text-[var(--accent)] inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            {locale === "pt" ? "ver mais" : "view more"} <ArrowRight size={14} />
+          </span>
         </Link>
 
-        <Link
-          href="/blog"
-          className="group p-8 border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-xl transition-all"
-        >
-          <div className="text-4xl mb-4">📝</div>
-          <h2 className="text-2xl font-bold mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-            {t.home.blogCard.title}
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            {t.home.blogCard.description}
-          </p>
+        <Link href="/blog" className="group surface-card p-6 flex flex-col gap-3">
+          <Newspaper className="text-[var(--accent)]" size={28} />
+          <h2 className="text-lg font-semibold">{t.home.blogCard.title}</h2>
+          <p className="text-sm text-[var(--muted)]">{t.home.blogCard.description}</p>
+          <span className="mt-auto text-xs font-mono-ui text-[var(--accent)] inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            {locale === "pt" ? "ver mais" : "view more"} <ArrowRight size={14} />
+          </span>
         </Link>
 
-        <Link
-          href="/contact"
-          className="group p-8 border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-green-500 dark:hover:border-green-400 hover:shadow-xl transition-all"
-        >
-          <div className="text-4xl mb-4">📧</div>
-          <h2 className="text-2xl font-bold mb-3 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-            {t.home.contactCard.title}
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            {t.home.contactCard.description}
-          </p>
+        <Link href="/contact" className="group surface-card p-6 flex flex-col gap-3">
+          <Mail className="text-[var(--accent)]" size={28} />
+          <h2 className="text-lg font-semibold">{t.home.contactCard.title}</h2>
+          <p className="text-sm text-[var(--muted)]">{t.home.contactCard.description}</p>
+          <span className="mt-auto text-xs font-mono-ui text-[var(--accent)] inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            {locale === "pt" ? "ver mais" : "view more"} <ArrowRight size={14} />
+          </span>
         </Link>
 
-        <Link
-          href="/github"
-          className="group p-8 border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-gray-900 dark:hover:border-gray-300 hover:shadow-xl transition-all"
-        >
-          <div className="text-4xl mb-4">🐛</div>
-          <h2 className="text-2xl font-bold mb-3 group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors">
-            {t.home.githubCard.title}
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            {t.home.githubCard.description}
-          </p>
+        <Link href="/github" className="group surface-card p-6 flex flex-col gap-3">
+          <BarChart3 className="text-[var(--accent)]" size={28} />
+          <h2 className="text-lg font-semibold">{t.home.githubCard.title}</h2>
+          <p className="text-sm text-[var(--muted)]">{t.home.githubCard.description}</p>
+          <span className="mt-auto text-xs font-mono-ui text-[var(--accent)] inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            {locale === "pt" ? "ver mais" : "view more"} <ArrowRight size={14} />
+          </span>
         </Link>
       </section>
 
       {/* Highlights */}
-      <section className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 md:p-12">
-        <h2 className="text-3xl font-bold text-center mb-8">{t.home.expertise}</h2>
-        <div className="grid md:grid-cols-3 gap-8 text-center">
-          <div>
-            <div className="text-4xl mb-3">☁️</div>
-            <h3 className="text-xl font-semibold mb-2">{t.home.expertiseCards.cloud.title}</h3>
-            <p className="text-gray-600 dark:text-gray-400">{t.home.expertiseCards.cloud.description}</p>
+      <section className="surface-card p-8 md:p-10">
+        <p className="section-label mb-2">{t.home.expertise}</p>
+        <div className="grid md:grid-cols-3 gap-8 mt-4">
+          <div className="flex gap-4">
+            <Cloud className="text-[var(--accent)] shrink-0" size={24} />
+            <div>
+              <h3 className="font-semibold mb-1">{t.home.expertiseCards.cloud.title}</h3>
+              <p className="text-sm text-[var(--muted)]">{t.home.expertiseCards.cloud.description}</p>
+            </div>
           </div>
-          <div>
-            <div className="text-4xl mb-3">🚀</div>
-            <h3 className="text-xl font-semibold mb-2">{t.home.expertiseCards.devops.title}</h3>
-            <p className="text-gray-600 dark:text-gray-400">{t.home.expertiseCards.devops.description}</p>
+          <div className="flex gap-4">
+            <Workflow className="text-[var(--accent)] shrink-0" size={24} />
+            <div>
+              <h3 className="font-semibold mb-1">{t.home.expertiseCards.devops.title}</h3>
+              <p className="text-sm text-[var(--muted)]">{t.home.expertiseCards.devops.description}</p>
+            </div>
           </div>
-          <div>
-            <div className="text-4xl mb-3">🔒</div>
-            <h3 className="text-xl font-semibold mb-2">{t.home.expertiseCards.security.title}</h3>
-            <p className="text-gray-600 dark:text-gray-400">{t.home.expertiseCards.security.description}</p>
+          <div className="flex gap-4">
+            <ShieldCheck className="text-[var(--accent)] shrink-0" size={24} />
+            <div>
+              <h3 className="font-semibold mb-1">{t.home.expertiseCards.security.title}</h3>
+              <p className="text-sm text-[var(--muted)]">{t.home.expertiseCards.security.description}</p>
+            </div>
           </div>
         </div>
       </section>

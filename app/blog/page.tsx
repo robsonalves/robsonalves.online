@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Calendar, Clock, PenLine, Newspaper } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { useTranslations } from "@/lib/i18n/use-translations";
@@ -13,22 +14,16 @@ export default async function Blog() {
   const posts = getAllPosts(locale);
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          {t.blog.title}
-        </h1>
-        <p className="text-xl text-gray-700 dark:text-gray-300">
-          {t.blog.subtitle}
-        </p>
+    <div className="max-w-4xl mx-auto space-y-10">
+      <div className="text-center space-y-3">
+        <p className="section-label">blog</p>
+        <h1 className="text-4xl font-bold tracking-tight">{t.blog.title}</h1>
+        <p className="text-lg text-[var(--muted)]">{t.blog.subtitle}</p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-5">
         {posts.map((post) => (
-          <article
-            key={post.slug}
-            className="group border-2 border-gray-200 dark:border-gray-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl transition-all overflow-hidden"
-          >
+          <article key={post.slug} className="group surface-card overflow-hidden">
             <Link href={`/blog/${post.slug}`}>
               <div className="flex flex-col md:flex-row">
                 {/* Image */}
@@ -45,25 +40,20 @@ export default async function Blog() {
 
                 {/* Content */}
                 <div className="p-8 flex-1 space-y-3">
-                  <div className="flex justify-between items-start gap-4">
-                    <h2 className="text-2xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {post.title}
-                    </h2>
+                  <h2 className="text-2xl font-bold group-hover:text-[var(--accent)] transition-colors">
+                    {post.title}
+                  </h2>
+                  <div className="flex items-center gap-4 text-sm text-[var(--muted)] font-mono-ui">
+                    <span className="inline-flex items-center gap-1.5"><Calendar size={14} /> {post.date}</span>
+                    <span className="inline-flex items-center gap-1.5"><Clock size={14} /> {post.readTime} {t.blog.readTime}</span>
+                    {post.author && <span className="inline-flex items-center gap-1.5"><PenLine size={14} /> {post.author}</span>}
                   </div>
-                  <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-                    <span>📅 {post.date}</span>
-                    <span>⏱️ {post.readTime} {t.blog.readTime}</span>
-                    {post.author && <span>✍️ {post.author}</span>}
-                  </div>
-                  <p className="text-lg text-gray-700 dark:text-gray-300">
+                  <p className="text-[var(--muted)]">
                     {post.description}
                   </p>
                   <div className="flex gap-2 flex-wrap">
                     {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-4 py-1.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
-                      >
+                      <span key={tag} className="tag-pill">
                         #{tag}
                       </span>
                     ))}
@@ -76,17 +66,17 @@ export default async function Blog() {
       </div>
 
       {posts.length === 0 && (
-        <div className="text-center py-20">
-          <div className="text-6xl mb-4">📝</div>
-          <p className="text-xl text-gray-500">
+        <div className="text-center py-20 space-y-4">
+          <Newspaper className="mx-auto text-[var(--muted)]" size={40} />
+          <p className="text-lg text-[var(--muted)]">
             {t.blog.noPostsYet}
           </p>
         </div>
       )}
 
-      <div className="mt-12 p-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl text-center">
-        <h3 className="text-2xl font-bold mb-3">📚 {t.blog.regularUpdates}</h3>
-        <p className="text-gray-700 dark:text-gray-300">
+      <div className="surface-card p-8 text-center">
+        <h3 className="text-xl font-semibold mb-3">{t.blog.regularUpdates}</h3>
+        <p className="text-[var(--muted)]">
           {t.blog.regularUpdatesDesc}
         </p>
       </div>
